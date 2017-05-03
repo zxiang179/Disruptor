@@ -46,8 +46,8 @@ public class LongEventMain {
 		//使用该方法获得具体存放数据的容器ringBuffer(环形结构)
 		RingBuffer<LongEvent> ringBuffer = disruptor.getRingBuffer();
 		
-		LongEventProducer producer = new LongEventProducer(ringBuffer);
-		//LongEventProducerWithTranslator producer = new LongEventProducerWithTranslator(ringBuffer);
+//		LongEventProducer producer = new LongEventProducer(ringBuffer);
+		LongEventProducerWithTranslator producer = new LongEventProducerWithTranslator(ringBuffer);
 		ByteBuffer byteBuffer = ByteBuffer.allocate(8);
 		for(long a=0;a<100;a++){
 			byteBuffer.putLong(0,a);
